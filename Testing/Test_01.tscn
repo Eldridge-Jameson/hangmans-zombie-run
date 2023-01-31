@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Entities/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Zombie/Zombie.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tilemaps/Cave.tres" type="TileSet" id=3]
+[ext_resource path="res://Art/Cave Decor.png" type="Texture" id=4]
+[ext_resource path="res://Entities/Checkpoint/Checkpoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Testing/Test_01.gd" type="Script" id=6]
+
+[sub_resource type="TileSet" id=1]
+0/name = "Pillar"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Left"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 32, 0, 32, 32 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "Middle"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 64, 0, 32, 32 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "Right"
+3/texture = ExtResource( 4 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 96, 0, 32, 32 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+
+[node name="Test_01" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 29, 138 )
+
+[node name="Zombie" parent="." instance=ExtResource( 2 )]
+position = Vector2( 276, 144 )
+
+[node name="Checkpoint" parent="." instance=ExtResource( 5 )]
+position = Vector2( 110, 128 )
+
+[node name="Checkpoint2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 166, 128 )
+
+[node name="Level" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 4
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 1, -1073741824, 0, 2, -1073741824, 65536, 3, -1073741824, 131072, 6, 0, 0, 65542, 0, 65536, 131078, 0, 131072, 262160, 0, 0, 262162, 0, 1, 262163, 0, 196611, 262165, 0, 196609, 262166, 0, 3, 393215, 0, 8, 327680, 0, 10, 327681, 0, 10, 327682, 0, 10, 327683, 0, 10, 327684, 0, 10, 327685, 0, 10, 327686, 0, 10, 327687, 0, 10, 327688, 0, 10, 327689, 0, 10, 327690, 0, 10, 327691, 0, 11, 327696, 0, 65536, 327698, 0, 131072, 327702, 0, 131072, 458751, 0, 65544, 393216, 0, 131081, 393217, 0, 131081, 393218, 0, 131081, 393219, 0, 131081, 393220, 0, 131081, 393221, 0, 131081, 393222, 0, 131081, 393223, 0, 131081, 393224, 0, 131081, 393225, 0, 131081, 393226, 0, 131081, 393227, 0, 131083, 393232, 0, 131072, 393236, 0, 196608, 524287, 0, 196616, 458752, 0, 196617, 458753, 0, 196617, 458754, 0, 196617, 458755, 0, 196617, 458756, 0, 196617, 458757, 0, 196617, 458758, 0, 196617, 458759, 0, 196617, 458760, 0, 196617, 458761, 0, 196617, 458762, 0, 196617, 458763, 0, 196619, 458770, 0, 0, 458774, 0, 0, 524302, 0, 196609, 524303, 0, 196610, 524304, 0, 196611, 524306, 0, 131073, 524307, 0, 196611, 524309, 0, 196609, 524310, 0, 131075, 524312, 0, 196609, 524313, 0, 3, 524315, 0, 1, 524316, 0, 196611, 589849, 0, 65536, 589851, 0, 65536, 655367, 0, 8, 655368, 0, 11, 655375, 0, 8, 655376, 0, 11, 655379, 0, 0, 655385, 0, 65537, 655386, 0, 196610, 655387, 0, 65539, 720902, 0, 8, 720903, 0, 65541, 720904, 0, 131083, 720910, 0, 8, 720911, 0, 65545, 720912, 0, 196619, 720914, 0, 196609, 720915, 0, 65538, 720916, 0, 196611, 720918, 0, 196609, 720919, 0, 196610, 720920, 0, 196610, 720921, 0, 65539, 720923, 0, 65537, 720924, 0, 196610, 720925, 0, 196610, 720926, 0, 196611, 786437, 0, 8, 786438, 0, 65541, 786439, 0, 131081, 786440, 0, 131083, 786446, 0, 196616, 786447, 0, 196619, 786451, 0, 131072, 786457, 0, 131073, 786458, 0, 2, 786459, 0, 131075, 851973, 0, 65544, 851974, 0, 131081, 851975, 0, 131081, 851976, 0, 131083, 851994, 0, 65536, 917509, 0, 196616, 917510, 0, 131077, 917511, 0, 131078, 917512, 0, 196619, 917529, 0, 1, 917530, 0, 131074, 917531, 0, 3, 983046, 0, 196616, 983047, 0, 196619, 983065, 0, 65536, 983067, 0, 65536, 1048601, 0, 131073, 1048602, 0, 196610, 1048603, 0, 131075 )
+
+[node name="Decor" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 4
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 327679, 1, 0, 262144, 2, 0, 262145, 2, 0, 262146, 2, 0, 262147, 2, 0, 262148, 2, 0, 262149, 2, 0, 262150, 2, 0, 262151, 2, 0, 262152, 2, 0, 262153, 2, 0, 262154, 2, 0, 262155, 3, 0, 393214, -1073741821, 0, 327692, -1610612735, 0, 458750, -1073741822, 0, 393228, -1610612734, 0, 524286, -1073741823, 0, 458764, -1610612733, 0, 589823, 1610612739, 0, 524288, 1610612738, 0, 524289, 1610612738, 0, 524290, 1610612738, 0, 524291, 1610612738, 0, 524292, 1610612738, 0, 524293, 1610612738, 0, 524294, 1610612738, 0, 524295, 1610612738, 0, 524296, 1610612738, 0, 524297, 1610612738, 0, 524298, 1610612738, 0, 524299, 1610612737, 0 )
